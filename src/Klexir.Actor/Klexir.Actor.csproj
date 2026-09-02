@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\Klexir.Actor.Abstractions\Klexir.Actor.Abstractions.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klexir.Actor.Abstractions", "src\Klexir.Actor.Abstractions\Klexir.Actor.Abstractions.csproj", "{2FBD1B0A-7505-4370-A450-84C55A75BBE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klexir.Actor", "src\Klexir.Actor\Klexir.Actor.csproj", "{AB0405E8-2EFA-4650-A874-B09E8EEA470D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klexir.Actor.Tests", "tests\Klexir.Actor.Tests\Klexir.Actor.Tests.csproj", "{71659D29-8904-4BB3-B19B-D2C308A7FF1E}"
+EndProject
+Global
+  GlobalSection(SolutionConfigurationPlatforms) = preSolution
+    Debug|Any CPU = Debug|Any CPU
+    Release|Any CPU = Release|Any CPU
+  EndGlobalSection
+  GlobalSection(ProjectConfigurationPlatforms) = postSolution
+    {2FBD1B0A-7505-4370-A450-84C55A75BBE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+    {2FBD1B0A-7505-4370-A450-84C55A75BBE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+    {2FBD1B0A-7505-4370-A450-84C55A75BBE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+    {2FBD1B0A-7505-4370-A450-84C55A75BBE0}.Release|Any CPU.Build.0 = Release|Any CPU
+    {AB0405E8-2EFA-4650-A874-B09E8EEA470D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+    {AB0405E8-2EFA-4650-A874-B09E8EEA470D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+    {AB0405E8-2EFA-4650-A874-B09E8EEA470D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+    {AB0405E8-2EFA-4650-A874-B09E8EEA470D}.Release|Any CPU.Build.0 = Release|Any CPU
+    {71659D29-8904-4BB3-B19B-D2C308A7FF1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+    {71659D29-8904-4BB3-B19B-D2C308A7FF1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+    {71659D29-8904-4BB3-B19B-D2C308A7FF1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+    {71659D29-8904-4BB3-B19B-D2C308A7FF1E}.Release|Any CPU.Build.0 = Release|Any CPU
+  EndGlobalSection
+EndGlobal
