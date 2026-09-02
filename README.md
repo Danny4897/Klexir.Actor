@@ -2,10 +2,11 @@
 
 [![CI](https://github.com/Danny4897/Klexir.Actor/actions/workflows/ci.yml/badge.svg)](https://github.com/Danny4897/Klexir.Actor/actions/workflows/ci.yml)
 [![.NET](https://img.shields.io/badge/.NET-8.0-purple.svg)](https://dotnet.microsoft.com/)
+[![Docs](https://img.shields.io/badge/docs-vitepress-7c3aed.svg)](https://danny4897.github.io/Klexir.Actor/)
 
 `Channel<T>`-backed actor primitives for Klexir: serialized state transitions without locks, tell/ask messaging, supervision, scheduling, and domain-event publishing on state change.
 
-> **Status: private research repo, not published to NuGet.** Reference the project directly until/unless it's published.
+> **Status: public research repo, not yet published to NuGet.** Reference the project directly until/unless it's published.
 
 ---
 
