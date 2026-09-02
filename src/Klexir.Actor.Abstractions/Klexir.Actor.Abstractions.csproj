@@ -2,7 +2,14 @@
   <PropertyGroup>
     <AssemblyName>Klexir.Actor.Abstractions</AssemblyName>
     <PackageId>Klexir.Actor.Abstractions</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Danny4897</Authors>
     <Description>Public actor-model contracts for the Klexir ecosystem.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Danny4897/Klexir.Actor</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Danny4897/Klexir.Actor</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>klexir;actor-model;concurrency</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
