@@ -19,4 +19,10 @@ public abstract class Actor<TMessage, TState>
     /// <summary>Runs exactly once when the actor's mailbox stops, whether by disposal or by exhausting its restart budget.</summary>
     public virtual ValueTask PostStopAsync(TState finalState, CancellationToken cancellationToken) =>
         ValueTask.CompletedTask;
+
+    /// <summary>
+    /// Runs after a successful <see cref="ReceiveAsync"/>; returned events are published in order via the actor
+    /// ref's configured domain-event publisher, if any. Default publishes nothing.
+    /// </summary>
+    public virtual IEnumerable<object> ExtractDomainEvents(TState previousState, TState newState) => [];
 }

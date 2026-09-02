@@ -11,13 +11,19 @@ public sealed class InMemoryActorRef<TMessage, TState> : IActorRef<TMessage>, IA
     private readonly Task _processing;
     private readonly Actor<TMessage, TState> _actor;
     private readonly SupervisionOptions _supervision;
+    private readonly IDomainEventPublisher? _domainEventPublisher;
     private TState _state;
 
-    public InMemoryActorRef(Actor<TMessage, TState> actor, TState initialState, SupervisionOptions? supervision = null)
+    public InMemoryActorRef(
+        Actor<TMessage, TState> actor,
+        TState initialState,
+        SupervisionOptions? supervision = null,
+        IDomainEventPublisher? domainEventPublisher = null)
     {
         _actor = actor ?? throw new ArgumentNullException(nameof(actor));
         _state = initialState;
         _supervision = supervision ?? new SupervisionOptions();
+        _domainEventPublisher = domainEventPublisher;
         _mailbox = Channel.CreateUnbounded<MailboxEnvelope>(new UnboundedChannelOptions
         {
             SingleReader = true,
@@ -78,7 +84,17 @@ public sealed class InMemoryActorRef<TMessage, TState> : IActorRef<TMessage>, IA
                 current = envelope;
                 try
                 {
+                    var previousState = _state;
                     _state = await _actor.ReceiveAsync(envelope.Message, _state, cancellationToken).ConfigureAwait(false);
+
+                    if (_domainEventPublisher is not null)
+                    {
+                        foreach (var domainEvent in _actor.ExtractDomainEvents(previousState, _state))
+                        {
+                            await _domainEventPublisher.PublishAsync(domainEvent, cancellationToken).ConfigureAwait(false);
+                        }
+                    }
+
                     envelope.Reply?.TrySetResult(_state);
                     current = null;
                 }
